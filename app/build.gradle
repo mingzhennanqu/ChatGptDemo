@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+configurations {
+    cleanedAnnotations
+    compile.exclude group: 'org.jetbrains' , module:'annotations'
+}
+
+dependencies {
+    implementation project(':library')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation files('libs/CircularReveal-2.0.0.aar')
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'org.jetbrains:annotations-java5:15.0'
+
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.10.0'
+
+    // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
+    implementation group: 'com.github.bumptech.glide', name: 'glide', version: '4.8.0'
+
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.9'
+
+    // Android依赖注入框架
+    implementation 'com.google.dagger:dagger:2.24'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.24'
+
+    implementation 'com.android.support:support-compat:28.0.0'
+}

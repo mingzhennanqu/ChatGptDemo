@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">带好纸</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_key">Key</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+
+    <string name="action_proxy">Chat代理设置</string>
+    <string name="token">Chat聊天上下文</string>
+    <string name="auto_wx">微信自动登录</string>
+    <string name="auto_wx_withdraw">微信防撤回</string>
+    <string name="auto_wx_chat">微信自动回复</string>
+    <string name="auto_wx_hb">微信自动抢红包</string>
+
+
+    <string name="auto_permissions">提示 : 检测到无障碍权限未开启，本界面功能需要开启无障碍权限才能正常运行，否则无法生效，点击消息跳转开启</string>
+
+
+
+</resources>

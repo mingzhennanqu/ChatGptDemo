@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="yalantis.com.sidemenu.sample">
+
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.READ_CLIPBOARD_IN_BACKGROUND" />
+    <uses-permission android:name="android.permission.WRITE_CLIPBOARD" />
+
+    <uses-permission android:name="android.permission.USE_DEVICE_AUTHENTICAION" />
+    <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS"
+        tools:ignore="ProtectedPermissions" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ceshi_150x150"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/accessible_service_config_jump_ad" />
+
+        <activity
+            android:name="com.myapps.demo.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.myapps.demo.service.FloatingWindowService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!--
+        service 注册
+        android:accessibilityEventTypes = "typeAllMask" 即监听所有类型的Event
+        android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" 确保只有系统可以绑定此服务 这是4.0以上的系统要求的
+        -->
+        <service
+            android:name="com.myapps.demo.service.AccessibilityServiceDemo"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessible_service_config_jump_ad" />
+
+        </service>
+<!--        <service-->
+<!--            android:name=".service.AutoReply"-->
+<!--            android:accessibilityEventTypes="typeAllMask"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true"-->
+<!--            android:label="微信自动回复"-->
+<!--            android:configChanges="orientation|screenSize"-->
+<!--            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.accessibilityservice.AccessibilityService" />-->
+<!--            </intent-filter>-->
+
+<!--            <meta-data-->
+<!--                android:name="android.accessibilityservice"-->
+<!--                android:resource="@xml/accessible_service_config_jump_ad" />-->
+<!--        </service>-->
+
+        <!--获取微信通知-->
+<!--        <service android:name=".service.WeChatNotificationListenerService"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.service.notification.NotificationListenerService" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+    </application>
+
+</manifest>

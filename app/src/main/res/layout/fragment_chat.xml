@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ChatFragment"
+    android:background="@color/c_f7f8fa"
+    android:id="@+id/frag_add">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:id="@+id/linear_add"
+        android:layout_gravity="center_vertical"
+         android:layout_width="match_parent"
+        android:orientation="vertical">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        >
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </LinearLayout>
+
+    </ScrollView>
+
+        <RelativeLayout
+
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_rounded_background">
+
+            <EditText
+                android:id="@+id/edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:hint="请输入消息..."
+                android:maxLines="5"
+                android:padding="10dp"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/send_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_rounded_background"
+                android:text="发送"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

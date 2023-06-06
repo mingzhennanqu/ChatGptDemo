@@ -8,4 +8,7 @@
     <string name="drawer_close">Close</string>
 
 
+    <string name="action_proxy">Chat代理设置</string>
+
+
 </resources>

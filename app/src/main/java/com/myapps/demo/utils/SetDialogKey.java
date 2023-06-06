@@ -72,7 +72,7 @@ public class SetDialogKey extends Dialog {
 
                 String key = editText.getText().toString().trim();
                 if (!key.isEmpty()) {
-                    editor.putString("Key" , "Bearer " + key);
+                    editor.putString("Key" , key);
                     Log.d("TAG", "onClick: key");
                     editor.commit();
                 }

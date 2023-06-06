@@ -35,67 +35,6 @@ public class Api {
         }else {
              proxy = null;
         }
-//        if (true){
-//            json = "{\"model\": \"gpt-3.5-turbo\", " +
-//                    "\"messages\": [{\"role\": \"user\", \"content\":  \"今天几号，星期几\"} ," +
-//                    "{\"role\": \"assistant\", \"content\":  \"抱歉，我无法回答这个问题，因为我不知道当前的日期和星期几。我只是一个计算机程序，没有自己的感知能力。\"} ," +
-//                    "{\"role\": \"user\", \"content\":  \"" + text + "\"} ] , " +
-//                    "\"stream\" : true}";
-
-//            json = "{\"model\": \"gpt-3.5-turbo\", " +
-//                    "\"messages\": [{\"role\": \"user\", \"content\":  \"今天几号，星期几\"} ," +
-//                    "{\"role\": \"assistant\", \"content\":  \"抱歉，我无法回答这个问题，因为我不知道当前的日期和星期几。我只是一个计算机程序，没有自己的感知能力。\"}] , " +
-//                    "\"stream\" : true}";
-
-
-
-//            try {
-//                // 将json字符串转化为json对象
-//                JSONObject jsonObject = new JSONObject(json);
-//                // 获取messages字段的json数组对象
-//                JSONArray messagesArray = jsonObject.getJSONArray("messages");
-//                // 创建一个新的json对象，表示新的消息
-//                Constants.newMessage  = new JSONObject();
-//                Constants.newMessage.put("role", "user");
-//                Constants.newMessage.put("content", text);
-//                // 将新的消息对象添加到messages数组中
-//                messagesArray.put(Constants.newMessage);
-//                // 更新json对象中的messages字段
-//                jsonObject.put("messages", messagesArray);
-//                // 将json对象转化为字符串
-//                json = jsonObject.toString();
-//                // 发送更新后的json数据
-//                // ...
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-
-//            try {
-//                // 将json字符串转化为json对象
-//                JSONObject jsonObject = new JSONObject(json);
-//                // 获取messages字段的json数组对象
-//                JSONArray messagesArray = jsonObject.getJSONArray("messages");
-//                // 创建一个新的json对象，表示新的消息
-//                JSONObject newMessage = new JSONObject();
-//                newMessage.put("role", "user");
-//                newMessage.put("content", text);
-//                // 将新的消息对象添加到messages数组中
-//                messagesArray.put(newMessage);
-//                // 更新json对象中的messages字段
-//                jsonObject.put("messages", messagesArray);
-//                // 将json对象转化为字符串
-//                json = jsonObject.toString();
-//                // 发送更新后的json数据
-//                // ...
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-
-//         }else {
-//            json = "{\"model\": \"gpt-3.5-turbo\", " +
-//                    "\"messages\": [{\"role\": \"user\", \"content\":  \"" + text + "\"}] , " +
-//                    "\"stream\" : true}";
-//        }
         RequestBody requestBodyJson =
                 RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json);
         Request request = new Request.Builder()
